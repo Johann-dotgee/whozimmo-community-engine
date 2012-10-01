@@ -48,6 +48,7 @@ en:
     
 
   greeting: "Hello %{name}"
+  inscription: "Inscription"
 
   #en: a_few_seconds_ago:  a few seconds ago
   a_few_seconds_ago:  a few seconds ago

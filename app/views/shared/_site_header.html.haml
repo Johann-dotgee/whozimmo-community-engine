@@ -1,0 +1,29 @@
+#header
+  #login
+    = form_tag sessions_url, :class => "ajaxSubmit" do
+      .loginButton
+        %button.inputButton.icon16.tick.btn{:type => "submit"} Valider
+      .loginColumn
+        %input#sessOpen{:type => "checkbox", :value => true}
+        %label{:for => "sessOpen"} Garder ma session ouverte
+        %span.hidden#default_email
+        %input#email.inputTextTiny.icon16.email.required.default{:type => "email", :name => "email"}
+      .loginColumn
+        = link_to "Inscription", "#"
+        %span -
+        = link_to "Mot de passe oublié ?", "#"
+        %span.hidden#default_password Mot de passe
+        %input#password.inputTextTiny.icon16.key.required.default{:type => "password", :name => "email"}
+  = link_to "http://www.whozimmo.com/" do
+    = image_tag "http://statics-whozimmo.businessimmo.com/img/logo.gif", :id => "logo"
+
+#promotion
+  #promotionContainer
+    .teaser
+      = link_to "http://vimeo.com/9498802", :class => "teaserButton cboxElement" do
+        = image_tag "http://statics-whozimmo.businessimmo.com/img/gfx/presentation.png"
+    #catcher
+      %h1 La nouvelle scène de l'immobilier professionnel
+      %p Your network comes first
+      = link_to "Découvrez Whozimmo", "http://whozimmo.businessimmo.com/static/page/presentation", :class => "inputButton black popup icon16 book_go cboxElement"
+    .clear

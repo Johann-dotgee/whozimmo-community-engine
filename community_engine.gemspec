@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
   s.add_dependency(%q<paperclip>, ["~> 2.4.3"])
   s.add_dependency(%q<acts_as_commentable>, ["= 3.0.1"])
   s.add_dependency(%q<recaptcha>, [">= 0"])
-  s.add_dependency(%q<omniauth>, ["= 0.3.2"])
   s.add_dependency(%q<prototype-rails>, [">= 0"])
   s.add_dependency(%q<rails_autolink>, [">= 0"])
   s.add_dependency(%q<meta_search>, ["= 1.1.3"])
@@ -51,5 +50,11 @@ Gem::Specification.new do |s|
   s.add_dependency(%q<tinymce-rails>, ["~> 3.5.4"])
   s.add_dependency(%q<bborn-acts-as-taggable-on>, ['~> 2.2.1'])
   s.add_dependency(%q<sanitize>, [">= 2.0.3"])
+  s.add_dependency(%q<simple_form>, [">= 2.0"])
+  s.add_dependency(%q<linkedin>, [">= 0.3.7"])
+  s.add_dependency(%q<omniauth>, [">= 0.3.2"])
+  s.add_dependency(%q<omniauth-linkedin>, [">= 0.0.8"])
+  # s.add_dependency(%q<omniauth-viadeo>, [">= 0.0.5"])
+  s.add_dependency(%q<omniauth-facebook>, [">= 1.4.1"])
 end
 

@@ -2,9 +2,12 @@ class AuthorizationsController < BaseController
   before_filter :login_required, :only => [:destroy]
 
   def create
+    # raise request.env['omniauth.auth']['info'].inspect
+    # @user =r User.find_or_create_from_auth_hash(auth_hash)
+    # self.currrent_user = @user
+    
     omniauth = request.env['omniauth.auth'] #this is where you get all the data from your provider through omniauth    
     provider_name = omniauth['provider'].capitalize    
-    
     @auth = Authorization.find_or_create_from_hash(omniauth, current_user)
 
     if logged_in?
@@ -38,4 +41,8 @@ class AuthorizationsController < BaseController
     
     redirect_to edit_account_user_path    
   end
+
+  # def auth_hash
+  #   request.env['omniauth.auth']
+  # end
 end

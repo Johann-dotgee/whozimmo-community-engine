@@ -1,3 +1,5 @@
+require 'omniauth'
+require 'omniauth-linkedin'
 configuration = {
 
   :app_host => "example.com", #override this in your application.yml
@@ -26,10 +28,11 @@ configuration = {
   # uncomment this if you want to use akismet for comment filtering. Go to http://en.wordpress.com/api-keys/
   
   #uncomment below to use omniauth providers for login and signup
-  # :auth_providers => {
-  #   :twitter => {:key => 'key', :secret => 'secret'},
-  #   :facebook => {:key => 'key', :secret => 'secret'}
-  #   },
+  :auth_providers => {
+    # :twitter => {:key => 'key', :secret => 'secret'},
+    :facebook => {:key => '267237540052457', :secret => '3ddb3fa11c14c4456354ff785343da58'},
+    :linkedIn => {:key => 'pn3l5xv6epxr', :secret => 'kW3SZDkVZoAL4XBW'}
+    },
   
   # for SEO reasons sometimes you should control the robots on how they have to handle your content
   # listing of stuff which points to single posts or entries should normally not been indexed, 

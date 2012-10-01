@@ -1,35 +1,62 @@
 - @meta = { :description => configatron.meta_description, :keywords => configatron.meta_keywords, :robots => configatron.robots_meta_list_content }
 
--unless logged_in?
-  =render :partial => 'base/homepage_banner_message'
 
 #yui-main
   .yui-b
-    -box :class => "hfeed" do 
-      %h3
+    %br
+    -box :class => "blockFlag green" do 
+      %h1
+        .blockFlagGreenRightErgo
+        .blockFlagGreenLeftErgo
         =:recent_posts.l
-      = render :partial => 'posts/post', :collection => @posts
-      %h6.all= link_to :see_all_recent_posts.l, recent_path
+      .blockContent
+        = render :partial => 'posts/post', :collection => @posts
+        %h6.all= link_to :see_all_recent_posts.l, recent_path
+  -box :class => "blockFlag green" do 
+    %h1
+      .blockFlagGreenRightErgo
+      .blockFlagGreenLeftErgo
+      = :inscription.l
+    .blockContent
+      = form_tag users_url, :class => "ajaxSubmit", :id => "register" do
+        = text_field_tag :login, nil, :class => "inputText default", :id => "user_login", :placeholder => "Identifiant"
+        = email_field_tag :email, nil, :class => "inputText default", :placeholder => "Adresse e-mail"
+        = select_tag "birthday(1i)", options_for_select((1940..2030).to_a)
+        = select_tag "birthday(2i)", options_for_select(["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"])
+        = select_tag "birthday(3i)", options_for_select((1..31))
+        %br
+        %br
+        = password_field :password, nil, :class => "inputText default", :placeholder => "Mot de passe"
+        = password_field :password_confirmation, nil, :class => "inputText default", :placeholder => "Mot de passe (confirmation)"
 .yui-b  
   =render :partial => 'shared/explore'
 
-  -box :class => "alt" do 
-    %h3
+  -box :class => "blockFlag green" do 
+    %h1
+      .blockFlagGreenRightErgo
+      .blockFlagGreenLeftErgo
       = :whats_hot.l
-      
-    %ul.list.page
-      -@popular_posts.each do |post|
-        =render :partial => 'posts/sidebar_post', :locals => {:post => post}
-    %h6.all
-      %a{:href=>popular_url}= :see_all.l
+    .blockContent
+      %ul.list.page
+        -@popular_posts.each do |post|
+          =render :partial => 'posts/sidebar_post', :locals => {:post => post}
+      %h6.all
+        %a{:href=>popular_url}= :see_all.l
 
-  -box :class => "alt" do 
-    %h3
+  -box :class => "blockFlag green" do 
+    %h1
+      .blockFlagGreenRightErgo
+      .blockFlagGreenLeftErgo
       =:featured_writer.l
-    -@featured_writers.each do |user|
-      =render :partial => "users/sidebar_user", :locals => {:user => user}
+    .blockContent
+      -@featured_writers.each do |user|
+        =render :partial => "users/sidebar_user", :locals => {:user => user}
 
-  -box :class => "alt" do 
-    %h3= :active_users.l
-    -@active_users.each do |user|    
-      =render :partial => "users/sidebar_user", :locals => {:user => user}      
+  -box :class => "blockFlag green" do 
+    %h1
+      .blockFlagGreenRightErgo
+      .blockFlagGreenLeftErgo
+      = :active_users.l
+    .blockContent
+      -@active_users.each do |user|    
+        =render :partial => "users/sidebar_user", :locals => {:user => user}  

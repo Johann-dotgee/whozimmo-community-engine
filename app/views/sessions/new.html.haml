@@ -22,6 +22,6 @@
         %h3= t 'sessions.new.omniauth.header'
         -configatron.auth_providers.to_hash.keys.each do |provider|
           -alt = t('sessions.new.omniauth.button_alt', :provider => provider.capitalize)
-          = link_to(image_tag("auth/#{provider.to_s}_64.png", :alt => alt), "/auth/#{provider.to_s}", :title => alt)
+          = link_to(image_tag("auth/#{provider.to_s.downcase}_64.png", :alt => alt), "/auth/#{provider.to_s.downcase}", :title => alt)
 
         
