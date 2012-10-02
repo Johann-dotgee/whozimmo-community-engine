@@ -38,7 +38,14 @@ alt blue dark #94beff
 /*  13. TAG CLOUDS                                        */
 /*  14. USER LIST                                         */
 /*========================================================*/
-
+h3{
+  font-style: normal !important;
+}
+.btn-in-box{
+  display: block;
+  margin: 10px 0;
+  text-align: right;
+}
 span.localized {
   font-style: italic;
   color: red;
@@ -110,6 +117,7 @@ color: #464337;
 float: right;
 font-size: 138.5%;
 margin-top: 25px;
+margin-right: 50px;
 }
 
 #hd h2#newmail{
@@ -805,7 +813,7 @@ div.user_list div.vcard {
 	
 /*USER PROFILE SIDEBAR*/
 #profile_details div.vcard{
-	width: 100%;}
+	width: 84%;}
 	#profile_details .vcard ul{
 		margin-left: 0px;}
 

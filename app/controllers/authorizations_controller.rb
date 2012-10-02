@@ -2,10 +2,6 @@ class AuthorizationsController < BaseController
   before_filter :login_required, :only => [:destroy]
 
   def create
-    # raise request.env['omniauth.auth']['info'].inspect
-    # @user =r User.find_or_create_from_auth_hash(auth_hash)
-    # self.currrent_user = @user
-    
     omniauth = request.env['omniauth.auth'] #this is where you get all the data from your provider through omniauth    
     provider_name = omniauth['provider'].capitalize    
     @auth = Authorization.find_or_create_from_hash(omniauth, current_user)
@@ -20,7 +16,8 @@ class AuthorizationsController < BaseController
     if logged_in?
       redirect_to request.env['omniauth.origin'] || user_path(current_user)
     else
-      flash[:notice] = @auth.user.errors.full_messages.to_sentence 
+      # raise @auth.errors.inspect
+      flash[:notice] = @auth.errors.full_messages.to_sentence 
       redirect_to login_path
     end
   end

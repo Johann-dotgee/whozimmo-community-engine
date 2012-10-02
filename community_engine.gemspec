@@ -52,9 +52,9 @@ Gem::Specification.new do |s|
   s.add_dependency(%q<sanitize>, [">= 2.0.3"])
   s.add_dependency(%q<simple_form>, [">= 2.0"])
   s.add_dependency(%q<linkedin>, [">= 0.3.7"])
+  s.add_dependency(%q<omniauth-oauth2>, [">= 1.1.1"])
+  s.add_dependency(%q<omniauth-facebook>, [">= 1.4.1"])
   s.add_dependency(%q<omniauth>, [">= 0.3.2"])
   s.add_dependency(%q<omniauth-linkedin>, [">= 0.0.8"])
-  # s.add_dependency(%q<omniauth-viadeo>, [">= 0.0.5"])
-  s.add_dependency(%q<omniauth-facebook>, [">= 1.4.1"])
 end
 

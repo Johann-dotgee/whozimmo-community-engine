@@ -2,7 +2,7 @@
 
 
 #yui-main
-  .yui-b
+  .yui-b.main
     %br
     -box :class => "blockFlag green" do 
       %h1
@@ -28,7 +28,9 @@
         %br
         = password_field :password, nil, :class => "inputText default", :placeholder => "Mot de passe"
         = password_field :password_confirmation, nil, :class => "inputText default", :placeholder => "Mot de passe (confirmation)"
-.yui-b  
+        %p.btn-in-box
+          %button{:type => "submit", :class => "inputButton icon16 tick btn"} S'inscrire
+.yui-b.main
   =render :partial => 'shared/explore'
 
   -box :class => "blockFlag green" do 

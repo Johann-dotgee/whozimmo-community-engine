@@ -1,5 +1,7 @@
 require 'omniauth'
 require 'omniauth-linkedin'
+require 'omniauth-viadeo'
+require 'omniauth-facebook'
 configuration = {
 
   :app_host => "example.com", #override this in your application.yml
@@ -14,7 +16,7 @@ configuration = {
   
   # Comment this out if you want to infer the locale
   # off of the http headers
-  :community_locale => "en",
+  :community_locale => "fr",
   
   :allow_anonymous_commenting => false,
   :allow_anonymous_forum_posting => false,
@@ -30,8 +32,9 @@ configuration = {
   #uncomment below to use omniauth providers for login and signup
   :auth_providers => {
     # :twitter => {:key => 'key', :secret => 'secret'},
-    :facebook => {:key => '267237540052457', :secret => '3ddb3fa11c14c4456354ff785343da58'},
-    :linkedIn => {:key => 'pn3l5xv6epxr', :secret => 'kW3SZDkVZoAL4XBW'}
+    :linkedIn => {:key => 'pn3l5xv6epxr', :secret => 'kW3SZDkVZoAL4XBW'},
+    :viadeo => {:key => "DotEngineOpBpnV", :secret => "RxPmiEToB4Im6"},
+    :facebook => {:key => '415626528500411', :secret => '55685a6523012fec7ee8da2067f3ac86'}
     },
   
   # for SEO reasons sometimes you should control the robots on how they have to handle your content

@@ -28,6 +28,8 @@ fr:
         created_at: "ajoutée le: "
 
   greetings: ['Bonjour', 'Salut', 'Bienvenue']
+  greeting: Bienvenue
+  cache_clear_link: "Vider le cache"
 
   #en: a_few_seconds_ago: a few seconds ago
   a_few_seconds_ago: il y a quelques secondes

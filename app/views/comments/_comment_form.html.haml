@@ -12,11 +12,11 @@
     }
       
   .errors
-  = form_remote_for(:comment, @comment, :loading => "$$('div#comments div.errors')[0].innerHTML = ''; $('comment_spinner').show();", :before => "tinyMCE.activeEditor.save();", :url => commentable_comments_path(commentable.class.to_s.tableize, commentable), :html => {:id => 'new_comment_form', :class => "MainForm"}) do |f|
+  = form_remote_for(:comment, @comment, :loading => "$$('div#comments div.errors')[0].innerHTML = ''; $('comment_spinner').show();", :before => "tinyMCE.activeEditor.save();", :url => commentable_comments_path(commentable.class.to_s.tableize, commentable), :html => {:id => 'new_comment_form'}) do |f|
     %label
       %em=:comment_character_limit.l
     
-    = f.text_area :comment, {:size => "86x5", :class => "rich_text_editor"}
+    = f.text_area :comment, {:size => "68x7", :class => "rich_text_editor"}
     
     - if !logged_in? && configatron.recaptcha_pub_key && configatron.recaptcha_priv_key 
       .right{:style => 'margin-top:2em;'}= recaptcha_tags :ajax => true
@@ -41,8 +41,8 @@
       = f.text_field :author_url, :size => 35
 
     
-    %p
-      = submit_tag :add_comment.l
+    %p.btn-in-box
+      %button{:type => "submit", :class => "inputButton icon16 tick btn"}= :add_comment.l
       = image_tag 'spinner.gif', :plugin => "community_engine", :style => 'display:none;', :id => 'comment_spinner'
 - else
   = link_to :log_in_to_leave_a_comment.l, new_commentable_comment_path(commentable.class, commentable.id)

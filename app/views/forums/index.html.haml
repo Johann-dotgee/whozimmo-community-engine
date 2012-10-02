@@ -2,9 +2,13 @@
 -@section = 'forums'
 
 -if admin?
-  -box :class => "alt first_alt" do 
-    %h3= :admin.l
-    %p= link_to :create_new_forum.l, new_forum_path, :class => "utility"
+  -box :class => "blockFlag blue first_alt" do
+    %h1
+      .blockFlagBlueRightErgo
+      .blockFlagBlueLeftErgo
+      = :admin.l
+    .blockContent
+      %p= link_to :create_new_forum.l, new_forum_path, :class => "utility"
 
 -box do 
 

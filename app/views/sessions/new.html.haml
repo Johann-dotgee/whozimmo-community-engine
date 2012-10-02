@@ -2,26 +2,31 @@
   
 #yui-main
   .yui-b.main_column
-    -box do
-      %h3
+    -box :class => "blockFlag green first_alt" do
+      %h1
+        .blockFlagGreenRightErgo
+        .blockFlagGreenLeftErgo
         =:log_in_to_site.l(:site => configatron.community_name)
-      = form_tag sessions_path, :class => 'MainForm' do
-        %label{"for"=>"email"}=:email.l
-        = text_field_tag 'email', nil, :size => 35
-        %label{"for"=>"password"}=:password.l
-        = password_field_tag 'password', nil, :size => 35
-        %fieldset
-          %label{"for"=>"remember_me"}
-            =:remember_me.l
-            = check_box_tag 'remember_me'
-        %p
-          = submit_tag :log_in.l
+      .blockContent
+        = form_tag sessions_path do
+          = text_field_tag 'email', nil, :size => 35, :class => "inputText default", :placeholder => :email.l
+          = password_field_tag 'password', nil, :size => 35, :class => "inputText default", :placeholder => :password.l
+          %fieldset
+            %label{"for"=>"remember_me"}
+              =:remember_me.l
+              = check_box_tag 'remember_me'
+          %p
+            = submit_tag :log_in.l, :class => "inputButton icon16 tick btn", :style => "float: right"
 
     -if configatron.auth_providers.to_hash.keys.any?      
-      -box :class => "alt" do
-        %h3= t 'sessions.new.omniauth.header'
-        -configatron.auth_providers.to_hash.keys.each do |provider|
-          -alt = t('sessions.new.omniauth.button_alt', :provider => provider.capitalize)
-          = link_to(image_tag("auth/#{provider.to_s.downcase}_64.png", :alt => alt), "/auth/#{provider.to_s.downcase}", :title => alt)
+      -box :class => "blockFlag blue" do
+        %h1
+          .blockFlagBlueRightErgo
+          .blockFlagBlueLeftErgo
+          = t 'sessions.new.omniauth.header'
+        .blockContent
+          - configatron.auth_providers.to_hash.keys.each do |provider|
+            -alt = t('sessions.new.omniauth.button_alt', :provider => provider.capitalize)
+            = link_to(image_tag("auth/#{provider.to_s.downcase}_64.png", :alt => alt), "/auth/#{provider.to_s}", :title => alt)
 
         

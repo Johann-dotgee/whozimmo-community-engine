@@ -1,4 +1,5 @@
 class UsersController < BaseController
+  require 'linkedin'
   include Viewable
   cache_sweeper :taggable_sweeper, :only => [:activate, :update, :destroy]  
   

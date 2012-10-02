@@ -1,3 +1,10 @@
+.blockFlag.black h1{
+	background: #000;
+	border: 1px solid #111;
+	color: #FFF;
+	padding: 9px 20px;
+	position: relative;
+}
 #content form {margin-bottom:0;}
 
 #content p.subtle { 
