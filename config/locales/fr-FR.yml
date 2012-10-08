@@ -1,4 +1,6 @@
 fr:
+  inscription: Inscription
+  email: Email
   date:
     formats:
       published_date: "%d/%m/%Y"
@@ -23,6 +25,23 @@ fr:
     pm: pm
 
   activerecord:
+    errors:
+      template:
+        header: Erreur
+        body: "Les erreurs suivantes ont ete detectees:"
+      models:
+        user:
+          attributes:
+            login:
+              too_short: "Identifiant trop court"
+              invalid: "Votre identifiant ne semble pas correcte"
+            password:
+              too_short: "Mot de passe trop court"
+            password_confirmation:
+              too_short: "Mot de passe de confirmation trop court"
+            email:
+              too_short: "L'adresse e-mail semble trop courte"
+              invalid: "L'adresse e-mail ne semble pas au bon format" 
     attributes:
       photo:
         created_at: "ajoutée le: "
@@ -1508,4 +1527,5 @@ fr:
   edit_album: "Editer l'album"
   #en: back_to_photo_manager: "Back to photo manager"
   back_to_photo_manager: "Retour à mes photos"
-
+  #en: see_all_recent_posts: "See all recent posts"
+  see_all_recent_posts: "Voir toutes les publications r&eacute;centes"

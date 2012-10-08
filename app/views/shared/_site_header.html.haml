@@ -14,16 +14,16 @@
         = link_to "Mot de passe oublié ?", "#"
         %span.hidden#default_password Mot de passe
         %input#password.inputTextTiny.icon16.key.required.default{:type => "password", :name => "email"}
-  = link_to "http://www.whozimmo.com/" do
+  = link_to "/" do
     = image_tag "http://statics-whozimmo.businessimmo.com/img/logo.gif", :id => "logo"
 
 #promotion
   #promotionContainer
     .teaser
-      = link_to "http://vimeo.com/9498802", :class => "teaserButton cboxElement" do
+      = link_to "http://vimeo.com/9646885", :class => "teaserButton cboxElement", :target => "_blank" do
         = image_tag "http://statics-whozimmo.businessimmo.com/img/gfx/presentation.png"
     #catcher
       %h1 La nouvelle scène de l'immobilier professionnel
       %p Your network comes first
-      = link_to "Découvrez Whozimmo", "http://whozimmo.businessimmo.com/static/page/presentation", :class => "inputButton black popup icon16 book_go cboxElement"
+      = link_to "Découvrez Whozimmo", "http://whozimmo.businessimmo.com/static/page/presentation", :class => "inputButton black popup icon16 book_go cboxElement", :target => "_blank"
     .clear

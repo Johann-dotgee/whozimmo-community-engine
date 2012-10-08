@@ -9,7 +9,7 @@
         =:log_in_to_site.l(:site => configatron.community_name)
       .blockContent
         = form_tag sessions_path do
-          = text_field_tag 'email', nil, :size => 35, :class => "inputText default", :placeholder => :email.l
+          = text_field_tag 'email', nil, :size => 35, :class => "inputText default", :placeholder => :login.l
           = password_field_tag 'password', nil, :size => 35, :class => "inputText default", :placeholder => :password.l
           %fieldset
             %label{"for"=>"remember_me"}
@@ -26,7 +26,7 @@
           = t 'sessions.new.omniauth.header'
         .blockContent
           - configatron.auth_providers.to_hash.keys.each do |provider|
-            -alt = t('sessions.new.omniauth.button_alt', :provider => provider.capitalize)
-            = link_to(image_tag("auth/#{provider.to_s.downcase}_64.png", :alt => alt), "/auth/#{provider.to_s}", :title => alt)
+            / - alt = t('sessions.new.omniauth.button_alt', :provider => provider.capitalize)
+            = link_to(image_tag("auth/#{provider.to_s.downcase}_64.png"), "/auth/#{provider.to_s}")
 
         
