@@ -36,4 +36,7 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
-gem 'community_engine', :path => 'communityengine', :branch => 'rails3'
+gem 'community_engine', :path => '../gems/communityengine'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'omniauth-viadeo', :git => 'git://github.com/Johann-dotgee/omniauth-viadeo.git'

@@ -1,5 +1,6 @@
                         community_engine        /                                                                     CommunityEngine::Engine
                                          GET    /base/:action(.:format)                                               base#:action
+                           search_global POST   /search(.:format)                                                     search#search
                       recent_forum_posts GET    /forums/recent(.:format)                                              sb_posts#index
                            recent_photos GET    /photos/recent(.:format)                                              photos#recent
                           authorizations GET    /authorizations(.:format)                                             authorizations#index
@@ -20,6 +21,13 @@
                              all_sb_post GET    /sb_posts/:id(.:format)                                               sb_posts#show
                                          PUT    /sb_posts/:id(.:format)                                               sb_posts#update
                                          DELETE /sb_posts/:id(.:format)                                               sb_posts#destroy
+                                  routes GET    /routes(.:format)                                                     routes#index
+                                         POST   /routes(.:format)                                                     routes#create
+                               new_route GET    /routes/new(.:format)                                                 routes#new
+                              edit_route GET    /routes/:id/edit(.:format)                                            routes#edit
+                                   route GET    /routes/:id(.:format)                                                 routes#show
+                                         PUT    /routes/:id(.:format)                                                 routes#update
+                                         DELETE /routes/:id(.:format)                                                 routes#destroy
                        monitorship_index GET    /monitorship(.:format)                                                monitorship#index
                                          POST   /monitorship(.:format)                                                monitorship#create
                          new_monitorship GET    /monitorship/new(.:format)                                            monitorship#new
